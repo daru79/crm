@@ -14,11 +14,12 @@
                             <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
                         </div>
                         <div class="modal-body">
-                            <h4 class="m-t-none">Wybierz plik</h4>
-                            <label class="btn btn-accent" for="file-selector2">
-                                <input id="file-selector2" style="display:none;" onchange="$('#upload-file-info2').html($(this).val());" type="file">
-                                <span id="upload-file-info2">Upload file</span>
-                            </label>
+                            <h1>Adding a new product</h1>
+
+                            {{ form_start(form) }}
+                                {{ form_row(form.brochure) }}
+                                <button type="submit" class="btn btn-action" formnovalidate>Ślij!</button>
+                            {{ form_end(form) }}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
