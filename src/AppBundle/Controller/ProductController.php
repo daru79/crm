@@ -20,6 +20,7 @@ class ProductController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //dump($form->getData());die;
             // $file stores the uploaded PDF file
             /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
             $file = $product->getBrochure();
@@ -36,10 +37,16 @@ class ProductController extends Controller
             // instead of its contents
             $product->setBrochure($fileName);
 
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($product);
+            $em->flush();
+
+            $this->addFlash('success', 'Plik załadowany.');
+
             // ... persist the $product variable or any other work
 
             //return $this->redirect($this->generateUrl('app_product_list'));
-            return new Response('<b>uploaded</b>');
+            return $this->redirectToRoute('product_new');
         }
 
         return $this->render('product/new.html.twig', array(
