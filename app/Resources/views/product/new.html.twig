@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"> Launch demo modal</button>
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title">Przesyłanie danych na serwer</h4>
+                            <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                        </div>
+                        <div class="modal-body">
+                            <h1>Adding a new product</h1>
+
+                            {{ form_start(form) }}
+                                {{ form_row(form.brochure) }}
+                                <button type="submit" class="btn btn-action" formnovalidate>Ślij!</button>
+                            {{ form_end(form) }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-accent">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

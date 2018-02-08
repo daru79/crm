@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"> Launch demo modal</button>
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title">Przesyłanie danych na serwer</h4>
+                            <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                        </div>
+                        <div class="modal-body">
+                            <h4 class="m-t-none">Wybierz plik</h4>
+                            <label class="btn btn-accent" for="file-selector2">
+                                <input id="file-selector2" style="display:none;" onchange="$('#upload-file-info2').html($(this).val());" type="file">
+                                <span id="upload-file-info2">Upload file</span>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-accent">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
